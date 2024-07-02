@@ -1,0 +1,4 @@
+# 캐시는 업로드 할 필요가 없지
+shader_cache
+*.svg
+.godot

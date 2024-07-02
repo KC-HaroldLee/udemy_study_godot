@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://depkiynbnxsoj"]
+
+[ext_resource type="Texture2D" uid="uid://b07sq5n25oc15" path="res://icon.svg" id="1_x1jqe"]
+
+[sub_resource type="Animation" id="Animation_y1o0t"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_2rts5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5luk0"]
+_data = {
+"RESET": SubResource("Animation_2rts5"),
+"spin": SubResource("Animation_y1o0t")
+}
+
+[node name="Spinner" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_x1jqe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5luk0")
+}
+autoplay = "spin"

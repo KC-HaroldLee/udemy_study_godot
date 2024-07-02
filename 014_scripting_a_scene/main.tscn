@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://msq3wkl7qfbg"]
+
+[ext_resource type="Texture2D" uid="uid://b07sq5n25oc15" path="res://icon.svg" id="1_2oetu"]
+[ext_resource type="Script" path="res://main.gd" id="1_syfyg"]
+[ext_resource type="PackedScene" uid="uid://depkiynbnxsoj" path="res://funtion.tscn" id="2_bun4g"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(100, 100)
+script = ExtResource("1_syfyg")
+start_lives = 5
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(539, 134)
+scale = Vector2(0.99, 0.99)
+skew = 0.657989
+texture = ExtResource("1_2oetu")
+
+[node name="Icon3" type="Sprite2D" parent="Icon"]
+position = Vector2(-180, -145)
+rotation = -0.837758
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_2oetu")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(200, 200)
+rotation = -0.837758
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_2oetu")
+
+[node name="Spinner" parent="." instance=ExtResource("2_bun4g")]
